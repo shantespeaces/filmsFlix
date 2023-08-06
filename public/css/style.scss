@@ -1,0 +1,376 @@
+body {
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-shadow: 1px 1px 5px white;
+    }
+
+    img.round-medias:hover {
+        box-shadow: 1px 1px 5px white;
+        border-radius: 50%;
+    }
+
+    img:hover {
+        box-shadow: 1px 1px 5px white;
+
+    }
+}
+
+
+//=============================NAV===============================//
+nav {
+    margin-top: 2em;
+    padding: 0 3.5em;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E3D58;
+    border-top: solid rgb(0, 0, 0) 3em;
+    border-bottom: solid rgb(0, 0, 0) 3em;
+
+    .liens {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+
+        a.accueil {
+            color: white;
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.conteneur-logo {
+    width: 280px;
+    height: 140px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+
+    .image-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+}
+
+.conteneur-logo:hover {
+    width: 290px;
+    height: 145px;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
+}
+
+//==============================INDEX.BLADE=====================================//
+
+section.liste-des-films {
+    margin: 5em 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    article {
+        width: 300px;
+        height: 500px;
+
+        .conteneur-image {
+            width: 300px;
+
+            img.thumbnail {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 250px;
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+                transition: all 0.3s ease;
+            }
+
+            .thumbnail:hover {
+                box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+                width: 255px;
+                animation: bounce 1s 4;
+            }
+
+            @keyframes bounce {
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+        }
+
+        .titre {
+            width: 250px;
+            text-align: center;
+            padding: 1em;
+        }
+    }
+}
+
+//==============================SHOW.BLADE=============================//
+.conteneur-carte-film {
+    max-width: 70em;
+    margin: 5em auto;
+    display: flex;
+    align-items: center;
+    text-transform: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2em;
+
+    .poster {
+        animation: slide-up 1s forwards;
+    }
+
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .typing-animation h1 {
+        text-align: center;
+        margin: 2em;
+        font-size: 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 4px solid transparent;
+        animation: typing 4s steps(40) forwards;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 130%;
+        }
+    }
+
+    .conteneur-description {
+        display: flex;
+        flex-direction: column;
+        margin: 5em;
+        margin-left: 20px;
+        animation: slide-in 1s forwards;
+    }
+
+    @keyframes slide-in {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .conteneur-votes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .conteneur-star {
+            display: flex;
+
+            .star {
+                width: 15px;
+                height: 15px;
+                padding-top: 1.1em;
+            }
+
+            .star:hover {
+                display: none;
+            }
+        }
+    }
+}
+
+.conteneur-boutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 5em;
+
+    button {
+        background-color: #1E3D58;
+        width: 20rem;
+        height: 3em;
+        border-radius: 25px;
+        border: none;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    button:hover {
+        box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
+    }
+}
+
+//=====================================FOOTER=====================================//
+footer {
+    background-color: #1E3D58;
+
+    p {
+        text-transform: none;
+        font-size: 12px;
+    }
+
+    .conteneur-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 10em;
+
+        .conteneur-liens-site {
+            display: flex;
+
+            p {
+                padding-right: 3em;
+                padding-left: 3em;
+            }
+        }
+
+        .conteneur-medias {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 3em 0;
+
+
+            .liens-medias {
+                display: flex;
+
+                a {
+                    padding: 1em 3em;
+                }
+            }
+        }
+
+        .conteneur-contact {
+            padding-right: 15em;
+        }
+    }
+
+    .copyright {
+        background-color: black;
+        margin: 0;
+        padding: 1em;
+        text-align: end;
+        text-transform: none;
+        font-size: 11px;
+    }
+}
+
+//=============================MEDIA QUERY==============================================//
+
+@media only screen and (max-width: 768px) {
+
+    .conteneur-carte-film {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        height: 11rem;
+
+        .liens {
+            position: relative;
+            top: 80px;
+        }
+    }
+
+    .conteneur-logo {
+        margin-top: 1em;
+    }
+
+    footer {
+        .conteneur-footer {
+            flex-direction: column;
+            padding-top: 3em;
+
+            .conteneur-logo {
+                margin-bottom: 3em;
+            }
+
+            .conteneur-contact {
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 518px) {
+    nav {
+        .liens {
+            width: 425px;
+        }
+    }
+
+    .conteneur-carte-film .poster {
+        width: 425px;
+    }
+
+    footer {
+        p {
+            padding: 0.5em;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    nav {
+        .liens {
+            width: 275px;
+        }
+    }
+
+    section.liste-des-films article .conteneur-image img.thumbnail {
+        padding: 20px;
+        width: 257px;
+    }
+
+    .conteneur-carte-film .poster {
+        width: 257px;
+    }
+
+    footer {
+        p {
+            padding: 0.5em;
+            font-size: 1rem;
+        }
+
+        .conteneur-footer .conteneur-liens-site {
+            flex-direction: column;
+        }
+    }
+}

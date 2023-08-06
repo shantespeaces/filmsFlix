@@ -1,0 +1,303 @@
+body {
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+}
+body a {
+  color: white;
+  text-decoration: none;
+}
+body a:hover {
+  text-shadow: 1px 1px 5px white;
+}
+body img.round-medias:hover {
+  box-shadow: 1px 1px 5px white;
+  border-radius: 50%;
+}
+body img:hover {
+  box-shadow: 1px 1px 5px white;
+}
+
+nav {
+  margin-top: 2em;
+  padding: 0 3.5em;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1E3D58;
+  border-top: solid rgb(0, 0, 0) 3em;
+  border-bottom: solid rgb(0, 0, 0) 3em;
+}
+nav .liens {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+nav .liens a.accueil {
+  color: white;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.conteneur-logo {
+  width: 280px;
+  height: 140px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+.conteneur-logo .image-logo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+}
+
+.conteneur-logo:hover {
+  width: 290px;
+  height: 145px;
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
+}
+
+section.liste-des-films {
+  margin: 5em 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+section.liste-des-films article {
+  width: 300px;
+  height: 500px;
+}
+section.liste-des-films article .conteneur-image {
+  width: 300px;
+}
+section.liste-des-films article .conteneur-image img.thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 250px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+section.liste-des-films article .conteneur-image .thumbnail:hover {
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+  width: 255px;
+  animation: bounce 1s 4;
+}
+@keyframes bounce {
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+section.liste-des-films article .titre {
+  width: 250px;
+  text-align: center;
+  padding: 1em;
+}
+
+.conteneur-carte-film {
+  max-width: 70em;
+  margin: 5em auto;
+  display: flex;
+  align-items: center;
+  text-transform: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2em;
+}
+.conteneur-carte-film .poster {
+  animation: slide-up 1s forwards;
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.conteneur-carte-film .typing-animation h1 {
+  text-align: center;
+  margin: 2em;
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid transparent;
+  animation: typing 4s steps(40) forwards;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 130%;
+  }
+}
+.conteneur-carte-film .conteneur-description {
+  display: flex;
+  flex-direction: column;
+  margin: 5em;
+  margin-left: 20px;
+  animation: slide-in 1s forwards;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.conteneur-carte-film .conteneur-votes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.conteneur-carte-film .conteneur-votes .conteneur-star {
+  display: flex;
+}
+.conteneur-carte-film .conteneur-votes .conteneur-star .star {
+  width: 15px;
+  height: 15px;
+  padding-top: 1.1em;
+}
+.conteneur-carte-film .conteneur-votes .conteneur-star .star:hover {
+  display: none;
+}
+
+.conteneur-boutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 5em;
+}
+.conteneur-boutton button {
+  background-color: #1E3D58;
+  width: 20rem;
+  height: 3em;
+  border-radius: 25px;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.conteneur-boutton button:hover {
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  background-color: #1E3D58;
+}
+footer p {
+  text-transform: none;
+  font-size: 12px;
+}
+footer .conteneur-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10em;
+}
+footer .conteneur-footer .conteneur-liens-site {
+  display: flex;
+}
+footer .conteneur-footer .conteneur-liens-site p {
+  padding-right: 3em;
+  padding-left: 3em;
+}
+footer .conteneur-footer .conteneur-medias {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3em 0;
+}
+footer .conteneur-footer .conteneur-medias .liens-medias {
+  display: flex;
+}
+footer .conteneur-footer .conteneur-medias .liens-medias a {
+  padding: 1em 3em;
+}
+footer .conteneur-footer .conteneur-contact {
+  padding-right: 15em;
+}
+footer .copyright {
+  background-color: black;
+  margin: 0;
+  padding: 1em;
+  text-align: end;
+  text-transform: none;
+  font-size: 11px;
+}
+
+@media only screen and (max-width: 768px) {
+  .conteneur-carte-film {
+    flex-direction: column;
+  }
+  nav {
+    flex-direction: column;
+    height: 11rem;
+  }
+  nav .liens {
+    position: relative;
+    top: 80px;
+  }
+  .conteneur-logo {
+    margin-top: 1em;
+  }
+  footer .conteneur-footer {
+    flex-direction: column;
+    padding-top: 3em;
+  }
+  footer .conteneur-footer .conteneur-logo {
+    margin-bottom: 3em;
+  }
+  footer .conteneur-footer .conteneur-contact {
+    padding-right: 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 518px) {
+  nav .liens {
+    width: 425px;
+  }
+  .conteneur-carte-film .poster {
+    width: 425px;
+  }
+  footer p {
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  nav .liens {
+    width: 275px;
+  }
+  section.liste-des-films article .conteneur-image img.thumbnail {
+    padding: 20px;
+    width: 257px;
+  }
+  .conteneur-carte-film .poster {
+    width: 257px;
+  }
+  footer p {
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+  footer .conteneur-footer .conteneur-liens-site {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */
